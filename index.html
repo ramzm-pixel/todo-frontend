@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css"
+    >
+</head>
+<body>
+    <header class="container">
+        <h3>Todo List</h3>
+    </header>
+    <main class="container">
+        <article 
+            id="error-box" 
+            style="display: none; background-color: #D93526; color: white; margin-bottom: 1rem; padding: 0.75rem 1rem;" 
+            role="alert"
+        >
+            <span id="error-message"></span>
+        </article>
+        <div id="login-form" style="margin-bottom: 1.5rem;" data-testid="login-form">
+            <input type="text" id="login-email-username" name="email-username" placeholder="Enter Username Or Email" autocomplete="username" autocapitalize="off" autocorrect="off" required>
+            <input type="password" id="login-password" name="password" placeholder="Enter Your Password" autocomplete="current-password" required>
+            <button type="button" id="login-button" style="width: 100%;">Log In</button>
+            <a href="forgot password.html" class="secondary">Forgot Password</a>
+        </div>
+        <a href="create account.html">Create An Account</a>
+    </main>
+    <script src="api.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

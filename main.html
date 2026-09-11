@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css"
+    >
+</head>
+<body>
+    <header style="display: flex; justify-content: space-between; align-items: center; margin: 0 1.5rem;">
+        <h3>Todo List</h3>
+        <button id="logout" type="button" class="contrast" style="width: 12.5rem;">Log Out</button>
+    </header>
+    
+    <article
+        id="page-error-box"
+        style="display: none; background-color: #D93526; color: white; margin: 0 1.5rem 1rem; padding: 0.75rem 1rem;"
+        role="alert"
+    >
+        <span id="page-error-message"></span>
+    </article>
+
+    <table class="striped">
+        <thead>
+            <tr>
+            <th scope="col" style="width: 5%;">#</th>
+            <th scope="col" style="width: 30%;">Task</th>
+            <th scope="col" style="width: 30%;">Notes</th>
+            <th scope="col" style="width: 15%;">Due Date</th>
+            <th scope="col" style="width: 10%; text-align: center;">Status</th>
+            <th scope="col" style="width: 10%; text-align: center;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div style="display: flex; justify-content:end; margin: 1rem;">
+        <button type="button" data-target="task-dialog" onclick="toggleModal(event)">Create New Task</button>
+    </div>
+    <dialog id="task-dialog">
+        <article>
+            <div
+                id="dialog-error-box"
+                style="display: none; background-color: #D93526; color: white; margin-bottom: 1rem; padding: 0.75rem 1rem;"
+                role="alert"
+            >
+                <span id="dialog-error-message"></span>
+            </div>
+            <div>
+                <fieldset role="group">
+                    <input type="text" id="task-title" name="title" placeholder="Task Title"/>
+                    <input type="text" id="task-notes" name="notes" placeholder="Notes"/>
+                    <input type="date" id="task-due-date" name="due-date" placeholder="Due date"/>
+                    <input type="button" id="task-submit-button" value="Submit" data-target="task-dialog"/>
+                </fieldset>
+            </div>
+        </article>
+    </dialog>
+
+    <script src="modal.js"></script>
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

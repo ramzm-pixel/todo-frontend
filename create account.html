@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css"
+    >
+</head>
+<body>
+    <header class="container">
+        <h3>Todo List</h3>
+    </header>
+    <main class="container">
+        <article 
+            id="error-box" 
+            style="display: none; background-color: #D93526; color: white; margin-bottom: 1rem; padding: 0.75rem 1rem;" 
+            role="alert"
+        >
+            <span id="error-message"></span>
+        </article>
+        <div id="sign-up-form" style="margin-bottom: 1.5rem;" data-testid="sign-up-form">
+            <input type="text" id="sign-up-username" name="username" placeholder="Enter Your Username" autocomplete="username" autocapitalize="off" autocorrect="off" required data-testid="sign-up-username">
+            <input type="email" id="sign-up-email" name="email" placeholder="Enter Your Email" autocomplete="email" autocapitalize="off" autocorrect="off" required data-testid="sign-up-email">
+            <input type="password" id="sign-up-password" name="password" placeholder="Enter Your Password" autocomplete="new-password" required data-testid="sign-up-password">
+            <input type="password" id="sign-up-confirm-password" name="confirm-password" placeholder="Confirm Your Password" autocomplete="new-password" required data-testid="sign-up-confirm-password">
+            <button type="button" id="sign-up-button" style="width: 100%;">Create Account</button>
+        </div>
+        <a href="index.html">Log In</a>
+    </main>
+    <script src="api.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>
